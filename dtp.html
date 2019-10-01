@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <title>Страховой юрист</title>
+        <link href="./css/main.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Залишились запитання?</h3>
+                        <p>Напишіть ваше питання і ми відповімо Вам найближчим часом</p>
+                        <form action="" method="post" id="popup-ajax_form">
+                            <div class="form-group">
+                                <p>Ім’я</p>
+                                <input type="text" class="form-control" id="js-popup-form-name" name="name" placeholder="Ім’я" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Телефон</p>
+                                <input type="text" class="form-control phone" id="js-popup-form-phone" name="phone" placeholder="+38 (___) ___-__-__" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Повідомлення</p>
+                                <textarea class="form-control" id="js-popup-form-message" name="message" rows="3" placeholder="Повідомлення"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-call send-js" id="js-popup-submit-form">Надіслати</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Повідомлення відправлено</h3>
+                        <p>Ми відповімо Вам найближчим часом!</p>
+                        <button class="btn btn-call last-btn" data-dismiss="modal">Дякую</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <main>
+            <header id="top" class="services_header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-6 logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-5 header-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                        data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                                </button>
+                                <div class="navbar-collapse collapse" id="navbars" style="">
+                                    <ul class="navbar-nav">
+                                        <li>
+                                            <a href="index.html" class="topLink">Головна</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#services" class="topLink">Послуги</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#articles" class="topLink">Корисні статті</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#faq" class="topLink">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#document" class="topLink">Зразки документів</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#review" class="topLink">Відгуки</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#contacts" class="topLink">Контакти</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-call" data-toggle="modal" data-target="#formModal">Звернутись</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="services article_page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 services-block">
+                            <h2>статті</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="img-block">
+                                <img src="./img/articles-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 current-article">
+                            <div class="article-title">
+                                <p>Що робити при ДТП? Алгоритм дій</p>
+                            </div>
+                            <div class="article-description">
+                                <p>Найкраще, що Ви можете зробити в перші хвилини після ДТП - це не панікувати, зберігати спокій та контролювати хід подій, що відбуваються навколо. Першочергові дії на місці ДТП мають важливе значення для подальшого розгляду справи, оскільки надалі буде практично неможливо достовірно відновити обставини події.</p>
+                                <p>Отже, <b>Ваші дії безпосередньо після ДТП:</b></p>
+                                <ul>
+                                    <li>не намагайтеся втекти з місця ДТП, оскільки це адміністративна відповідальність, яка карається штрафом, а якщо в результаті аварії є потерпілі - кримінальна відповідальність;</li>
+                                    <li>переконайтеся, що ніхто не постраждав, в разі необхідності викличте швидку (103);</li>
+                                    <li>увімкніть аварійну сигналізацію, встановіть на проїжджій частині знак аварійної зупинки;</li>
+                                    <li>викличте поліцію (102) та зателефонуйте на “гарячу лінію” страхової компанії, де придбали поліс обов’язкового страхування цивільно-правової відповідальності власників наземних засобів (“цивілку”) та повідомте про страховий випадок;</li>
+                                    <li>до приїзду поліції Ваш автомобіль, як i автомобілі інших учасників ДТП, а також інші предмети, повинні знаходиться на тому самому місці, де були відразу після аварії. <b>Переміщувати автомобілі з місця ДТП до прибуття поліції i представників страхових компаній не можна;</b></li>
+                                    <li>спробуйте знайти очевидців аварії та обміняйтеся з ними контактами. Ваші пасажири - це також свідки, поліція повинна відібрати в них пояснення щодо обставин ДТП;</li>
+                                    <li><b>за допомогою телефону (фото, відео) детально зафіксуйте місце події;</b></li>
+                                    <li>проконтролюйте процес складання поліцейськими схеми ДТП та яким чином вони описали пошкодження автомобілів;</li>
+                                    <li>уважно перечитайте складені поліцейськими документи, внесіть до них свої зауваження чи доповнення та переконайтеся, що їх записали, лише після цього підписуйте їх.</li>
+                                </ul>
+                                <p>Слід зауважити, що працівники поліції можуть тимчасово вилучити у Вас посвідчення водія.</p>
+                                <p>Підкреслимо, що позбавити власника авто права керувати автомобілем вправі лише суд, працівник поліції має право лише тимчасово вилучити посвідчення, натомість видавши водію тимчасовий дозвіл на керування авто, строк якого обмежується 3 місяцями. Крім цього, факт вилучення посвідчення обов’язково має бути зафіксований у протоколі про адміністративне правопорушення.</p>
+                                <p><b>Пам’ятайте, що інспектор складає протокол на того водія, який, на його думку, порушив ПДР. Однак, хто винен в ДТП вирішує тільки суд.</b></p>
+                                <p><b>Чи можна обійтись без поліції?</b></p>
+                                <p>У разі якщо постраждалих від ДТП немає, а пошкодження автомобіля незначні, можна скористатися європротоколом.</p>
+                                <p>Зазвичай бланк європротоколу видає страхова компанія при оформленні «автоцивілки». Кожен з водіїв заповнює тільки одну половину протоколу (жовту або синю). Центральну частину бланка (білу) заповнюють обидва.</p>
+                                <p>Окрім цього, за допомогою смартфону чи планшету є можливість заповнити електронний європротокол (за наступним посиланням -
+                                    <a href="https://dtp.mtsbu.ua/page1.html" target="_blank">https://dtp.mtsbu.ua/page1.html</a>), який має ряд переваг.</p>
+                                <p>По-перше, не потрібно нічого малювати - до електронної версії додано 20 найпоширеніших схем ДТП.</p>
+                                <p>По-друге, в електронному режимі перевіряється справжність полісів.</p>
+                                <p>По-третє, Ви зможете прив'язати місце аварії до карти та зафіксувати час.</p>
+                                <p>І на сам кінець, якщо Ви заповнювали паперовий бланк європротоколу, його копію необхідно протягом 3 діб надати своєму страхувальнику.</p>
+                                <p>З електронною версією цього робити не доведеться: страхова компанія автоматично отримає повідомлення про ДТП.</p>
+                            </div>
+                            <a href="articles.html" class="btn btn-call">На попередню</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 copyright">
+                        <p>© 2019 Дорожный Юрист</p>
+                    </div>
+                    <div class="col-sm-6 insta">
+                        <a href="#" class="insta-block">
+                            <p>Хотите всегда быть в курсе событий?</p>
+                            <p>Подписывайтесь на нашу страницу</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./js/libs.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

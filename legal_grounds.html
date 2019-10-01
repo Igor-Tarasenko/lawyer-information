@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <title>Страховой юрист</title>
+        <link href="./css/main.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Залишились запитання?</h3>
+                        <p>Напишіть ваше питання і ми відповімо Вам найближчим часом</p>
+                        <form action="" method="post" id="popup-ajax_form">
+                            <div class="form-group">
+                                <p>Ім’я</p>
+                                <input type="text" class="form-control" id="js-popup-form-name" name="name" placeholder="Ім’я" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Телефон</p>
+                                <input type="text" class="form-control phone" id="js-popup-form-phone" name="phone" placeholder="+38 (___) ___-__-__" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Повідомлення</p>
+                                <textarea class="form-control" id="js-popup-form-message" name="message" rows="3" placeholder="Повідомлення"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-call send-js" id="js-popup-submit-form">Надіслати</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Повідомлення відправлено</h3>
+                        <p>Ми відповімо Вам найближчим часом!</p>
+                        <button class="btn btn-call last-btn" data-dismiss="modal">Дякую</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <main>
+            <header id="top" class="services_header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-6 logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-5 header-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                        data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                                </button>
+                                <div class="navbar-collapse collapse" id="navbars" style="">
+                                    <ul class="navbar-nav">
+                                        <li>
+                                            <a href="index.html" class="topLink">Головна</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#services" class="topLink">Послуги</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#articles" class="topLink">Корисні статті</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#faq" class="topLink">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#document" class="topLink">Зразки документів</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#review" class="topLink">Відгуки</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#contacts" class="topLink">Контакти</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-call" data-toggle="modal" data-target="#formModal">Звернутись</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="services article_page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 services-block">
+                            <h2>статті</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="img-block">
+                                <img src="./img/articles-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 current-article">
+                            <div class="article-title">
+                                <p>Законні підстави для пред’явлення регресної вимоги з боку страхової компанії</p>
+                            </div>
+                            <div class="article-description">
+                                <p>Водії, які застрахували свій автомобіль, вважають, що позбавили себе від проблем у разі ДТП. Проте, якщо страхова компанія оплатить ремонт «чужого» автомобіля, не виключено, що надалі ці кошти вона стягне саме з Вас - водія, який придбав «автоцивілку».</p>
+                                <p>Таке стягнення коштів можливе у разі:</p>
+                                <ul>
+                                    <li>якщо водій перебував у стані алкогольного сп'яніння;</li>
+                                    <li>якщо водій керував без права на керування відповідної категорії;</li>
+                                    <li>якщо після ДТП водій самовільно залишив місце пригоди;</li>
+                                    <li>якщо автомобіль був у несправному технічному стані;</li>
+                                </ul>
+                                <p>Якщо ви не повертаєте ці кошти добровільно, то компанія стягує їх в судовому порядку. Також у разі програшу Вами справи, вам потрібно буде сплатити судові витрати страхової компанії, а це також декілька тисяч гривень.</p>
+                                <p>Тому, ЗАПАМ’ЯТАЙТЕ ЦІ ВИПАДКИ, ЩОБ ПРИ НАЯВНОСТІ АВТОЦИВІЛКИ НЕ ОПЛАТИТИ зі своєї кишені ще й ВАРТІСТЬ РЕМОНТУ «ЧУЖОГО» АВТОМОБІЛЯ.</p>
+                            </div>
+                            <a href="articles.html" class="btn btn-call">На попередню</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 copyright">
+                        <p>© 2019 Дорожный Юрист</p>
+                    </div>
+                    <div class="col-sm-6 insta">
+                        <a href="#" class="insta-block">
+                            <p>Хотите всегда быть в курсе событий?</p>
+                            <p>Подписывайтесь на нашу страницу</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./js/libs.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

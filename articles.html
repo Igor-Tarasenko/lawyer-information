@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <title>Страховой юрист</title>
+        <link href="./css/main.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Залишились запитання?</h3>
+                        <p>Напишіть ваше питання і ми відповімо Вам найближчим часом</p>
+                        <form action="" method="post" id="popup-ajax_form">
+                            <div class="form-group">
+                                <p>Ім’я</p>
+                                <input type="text" class="form-control" id="js-popup-form-name" name="name" placeholder="Ім’я" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Телефон</p>
+                                <input type="text" class="form-control phone" id="js-popup-form-phone" name="phone" placeholder="+38 (___) ___-__-__" required>
+                            </div>
+                            <div class="form-group">
+                                <p>Повідомлення</p>
+                                <textarea class="form-control" id="js-popup-form-message" name="message" rows="3" placeholder="Повідомлення"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-call send-js" id="js-popup-submit-form">Надіслати</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button class="close-btn" data-dismiss="modal"></button>
+                <div class="form form-bg">
+                    <div class="main-form">
+                        <h3>Повідомлення відправлено</h3>
+                        <p>Ми відповімо Вам найближчим часом!</p>
+                        <button class="btn btn-call last-btn" data-dismiss="modal">Дякую</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <main>
+            <header id="top" class="services_header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-6 logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-5 header-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                        data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                                </button>
+                                <div class="navbar-collapse collapse" id="navbars" style="">
+                                    <ul class="navbar-nav">
+                                        <li>
+                                            <a href="index.html" class="topLink">Головна</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#services" class="topLink">Послуги</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#articles" class="topLink">Корисні статті</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#faq" class="topLink">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#document" class="topLink">Зразки документів</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#review" class="topLink">Відгуки</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#contacts" class="topLink">Контакти</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-call" data-toggle="modal" data-target="#formModal">Звернутись</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="services article_page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 services-block">
+                            <h2>статті</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="img-block">
+                                <img src="./img/articles-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="dtp.html">
+                                <div class="articles_inner">
+                                    <p>Що робити при ДТП? Алгоритм дій</p>
+                                    <p>Найкраще, що Ви можете зробити в перші хвилини після ДТП - це не панікувати, зберігати спокій та контролювати хід подій, що відбуваються навколо...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="evroprotokol.html">
+                                <div class="articles_inner">
+                                    <p>Європротокол з автоцивілки</p>
+                                    <p>Основні поради...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="franchise.html">
+                                <div class="articles_inner">
+                                    <p>Що таке франшиза в автострахуванні?</p>
+                                    <p>Франшизу іноді в двох словах називають «невиплачений збиток», тобто це збиток, а вірніше їх частина, яка не підлягає відшкодуванню при настанні страхової події...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="right_of_recourse.html">
+                                <div class="articles_inner">
+                                    <p>Право регресної вимоги через відсутність письмового повідомлення про ДТП</p>
+                                    <p>Суди не будуть задовольняти регресні позови страхових компаній по ОСАГО через відсутність письмового повідомлення про ДТП...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="surcharge.html">
+                                <div class="articles_inner">
+                                    <p>Доплата ПДВ страховою компанією за полісом ОСЦПВ</p>
+                                    <p>В яких випадках страхова компанія (МТСБУ) має право утримати суму ПДВ зі страхової виплати? Нагадаємо, що виплата страхового відшкодування можлива...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="insurance_policy.html">
+                                <div class="articles_inner">
+                                    <p>Страховий поліс і зупинка автомобіля поліцією</p>
+                                    <p>Законом передбачено чіткі підстави зупинки поліцією автомобіля...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 articles-item">
+                            <a href="legal_grounds.html">
+                                <div class="articles_inner">
+                                    <p>Законні підстави для пред’явлення регресної вимоги з боку страхової компанії</p>
+                                    <p>Водії, які застрахували свій автомобіль, вважають, що позбавили себе від проблем у разі ДТП...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="offset-lg-6 col-lg-6 form-block">
+                            <div class="form form-bg">
+                                <div class="main-form">
+                                    <h3>Залишились запитання?</h3>
+                                    <p>Напишіть ваше питання і ми відповімо Вам найближчим часом</p>
+                                    <form action="" method="post" id="ajax_form">
+                                        <div class="form-group">
+                                            <p>Ім’я</p>
+                                            <input type="text" class="form-control" id="js-form-name" name="name" placeholder="Ім’я" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Телефон</p>
+                                            <input type="text" class="form-control phone" id="js-form-phone" name="phone" placeholder="+38 (___) ___-__-__" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Повідомлення</p>
+                                            <textarea class="form-control" id="js-form-message" name="message" rows="3" placeholder="Повідомлення"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-call send-js" id="js-submit-form">Надіслати</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 order-1 order-sm-0 copyright">
+                        <p>© 2019 Дорожный Юрист</p>
+                    </div>
+                    <div class="col-sm-6 order-0 order-sm-1 insta">
+                        <a href="#" class="insta-block">
+                            <p>Хотите всегда быть в курсе событий?</p>
+                            <p>Подписывайтесь на нашу страницу</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./js/libs.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
