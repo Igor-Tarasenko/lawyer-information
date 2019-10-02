@@ -1,17 +1,18 @@
 <?php
     ini_set( 'display_errors', 1 );
     error_reporting( E_ALL );
-    $to = "my@mail.com"; // Здесь нужно написать e-mail, куда будут приходить письма
-        $from = "no-reply@mail.com"; // Здесь нужно написать e-mail, от кого будут приходить письма, например no-reply(собака)epicblog.net
+    $to = "strakhovoiiurist@ukr.net";
+        $from = "no-reply@mail.com";
 
         /* Указываем переменные, в которые будет записываться информация с формы */
-        $first_name = $_POST['name'];
+        $name = $_POST['name'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $subject = "Форма отправки сообщений с сайта Epic Blog";
+        $email = $_POST['email'];
+        $subject = "Письмо от посетиля сайта";
 
         /* Переменная, которая будет отправлена на почту со значениями, вводимых в поля */
-        $mail_to_myemail = "Здравствуйте! \r\n Было отправлено сообщение с сайта! \r\n Имя отправителя: $first_name \r\n Номер телефона: $phone \r\n Текст сообщения: $message \r\n Чтобы ответить на письмо, создайте новое сообщение, скопируйте электронный адрес и вставьте в поле Кому.";
+        $mail_to_myemail = "Написал(а): $name\r\n Контактный email - $email\r\n Контактный телефон - $phone\r\n Текст письма: $message\n";
 
         $headers = "From: $from \r\n";
 

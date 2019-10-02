@@ -16,48 +16,139 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: $(myHash).offset().top}, 700);
     }
 
-    $('#js-submit-form').click(function(e) {
-        e.preventDefault();
-        // Your validation here!
-        const data = {
-            name: $('#js-form-name').val(),
-            phone: $('#js-form-phone').val(),
-            message: $('#js-form-message').val()
+    $('#js-form-name, #js-form-phone, #js-form-email, #js-form-message').unbind().blur( function(){
+
+        // Для удобства записываем обращения к атрибуту и значению каждого поля в переменные
+        var id = $(this).attr('id');
+        var val = $(this).val();
+        switch(id)
+        {
+            case 'js-form-name':
+                var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+                if(val.length > 2 && val != '' && rv_name.test(val))
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введіть ім\'я')
+                }
+                break;
+            case 'js-form-phone':
+                if(val != '' && val.length > 2)
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введіть телефон')
+                }
+                break;
+            // Проверка email
+            case 'js-form-email':
+                var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+                if(val != '' && rv_email.test(val))
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Ведіть коректний email');
+                }
+                break;
+            case 'js-form-message':
+                if(val != '' && val.length < 5000)
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введітеь повідомлення')
+                }
+                break;
         }
-        $.ajax({
-            type: 'POST',
-            url: 'send.php',
-            data: data,
-            success: function() {
-                $('#thanksModal').modal('show')
-            },
-            error: function(err) {
-                alert(err);
-            }
-        })
+
     });
-    $('#js-popup-submit-form').click(function(e) {
+    $('#js-popup-form-name, #js-popup-form-phone, #js-popup-form-email, #js-popup-form-message').unbind().blur( function(){
+
+        // Для удобства записываем обращения к атрибуту и значению каждого поля в переменные
+        var id = $(this).attr('id');
+        var val = $(this).val();
+        switch(id)
+        {
+            case 'js-popup-form-name':
+                var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+                if(val.length > 2 && val != '' && rv_name.test(val))
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введіть ім\'я')
+                }
+                break;
+            case 'js-popup-form-phone':
+                if(val != '' && val.length > 2)
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введіть телефон')
+                }
+                break;
+            // Проверка email
+            case 'js-popup-form-email':
+                var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+                if(val != '' && rv_email.test(val))
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Ведіть коректний email');
+                }
+                break;
+            case 'js-popup-form-message':
+                if(val != '' && val.length < 5000)
+                {
+                    $(this).addClass('not_error');
+                }
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $('.errors p').html('Введітеь повідомлення')
+                }
+                break;
+        }
+
+    });
+
+    $('#ajax_form, #popup-ajax_form').submit(function(e) {
         e.preventDefault();
-        // Your validation here!
-        const data = {
-            name: $('#js-popup-form-name').val(),
-            phone: $('#js-popup-form-phone').val(),
-            message: $('#js-popup-form-message').val()
-        };
-        $.ajax({
-            type: 'POST',
-            url: 'send.php',
-            data: data,
-            success: function() {
-                $('#thanksModal').modal('show')
-            },
-            error: function(err) {
-                alert(err);
-            }
-        })
+        if($('.not_error').length == 4) {
+            $.ajax({
+                type: 'POST',
+                url: 'send.php',
+                data: $(this).serialize(),
+                success: function() {
+                    $('#thanksModal').modal('show')
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            })
+        } else {
+            return false;
+        }
     });
-
-
 
     $(".slider").slick({
         infinite: true,
